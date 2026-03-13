@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROSA Deployment Success</title>
+  <style>
+    :root {
+      --primary: #ee0000; /* Red Hat 브랜드 컬러 느낌 */
+      --bg: #0b0e14;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --text: #e0e0e0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+      background-size: 40px 40px; /* 배경에 미세한 그리드 패턴 */
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .card {
+      position: relative;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px); /* 글래스모피즘 */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 60px;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 상단 장식용 선 */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 0 0 4px 4px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      background: linear-gradient(to right, #fff, #999);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #aaa;
+      margin: 10px 0;
+    }
+
+    strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .status-group {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: rgba(0, 255, 136, 0.1);
+      color: #00ff88;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba(0, 255, 136, 0.2);
+    }
+
+    /* 깜빡이는 녹색 점 효과 */
+    .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #00ff88;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>ROSA Deployment</h1>
+    <p>
+      현재 정적 HTML 애플리케이션이 <br/>
+      <strong>Red Hat OpenShift Service on AWS</strong> 환경에서<br/>
+      안정적으로 구동되고 있습니다.
+    </p>
+    
+    <div class="status-group">
+      <div class="badge">
+        <span class="dot"></span>
+        Live on Route
+      </div>
+      <p
